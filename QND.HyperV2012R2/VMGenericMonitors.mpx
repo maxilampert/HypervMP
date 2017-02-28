@@ -1,7 +1,7 @@
 ﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Monitoring>
     <Monitors>
-      <UnitMonitor ID="QND.Hyperv.2012R2.VMMemoryStatus" Accessibility="Public" Enabled="true" Target="QND.Hyperv.2012R2.VM"
+      <UnitMonitor ID="QND.Hyperv.2012R2.VMMemoryStatus" Accessibility="Public" Enabled="false" Target="QND.Hyperv.2012R2.VM"
             ParentMonitorID="Health!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="QND.Hyperv.2012R2.VMMemoryStatus.MT" ConfirmDelivery="false">
         <Category>PerformanceHealth</Category>
         <AlertSettings AlertMessage="QND.Hyperv.2012R2.VMMemoryStatus.AlertMessage">
@@ -25,10 +25,10 @@
           <TimeoutSeconds>120</TimeoutSeconds>
           <TraceLevel>2</TraceLevel>
           <VMId>$Target/Property[Type='QND.Hyperv.2012R2.VM']/VirtualMachineId$</VMId>
-          <PressureThreshold>105</PressureThreshold>
+          <PressureThreshold>110</PressureThreshold>
         </Configuration>
       </UnitMonitor>
-      <UnitMonitor ID="QND.Hyperv2012R2.VMName.Matches.ComputerName.Monitor" Accessibility="Public" Enabled="true" ConfirmDelivery="false"
+      <UnitMonitor ID="QND.Hyperv2012R2.VMName.Matches.ComputerName.Monitor" Accessibility="Public" Enabled="false" ConfirmDelivery="false"
                    ParentMonitorID="Health!System.Health.ConfigurationState" Priority="Normal" Remotable="true"
                    Target="QND.Hyperv.2012R2.VM" TypeID ="QND.Hyperv2012R2.VMName.ComputerName.Match.MT">
         <Category>ConfigurationHealth</Category>
@@ -55,7 +55,6 @@
           <TimeoutSeconds>300</TimeoutSeconds>
         </Configuration>
       </UnitMonitor>
-
     </Monitors>
   </Monitoring>
   <Presentation>
@@ -90,7 +89,6 @@
             VM Computer NetBIOS Name: {2}
           </Description>
         </DisplayString>
-
       </DisplayStrings>
     </LanguagePack>
   </LanguagePacks>

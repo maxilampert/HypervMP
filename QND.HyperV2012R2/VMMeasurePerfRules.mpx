@@ -2,7 +2,7 @@
   <Monitoring>
     <Rules>    
 
-      <Rule ID="QND.Hyperv.2012R2.VMUptimePerc.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMUptimePerc.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv.2012R2.GetVMUptimePerf.DS">
@@ -37,7 +37,7 @@
 
       <!--
       The following commented out rules were valid *before* we started to reset every ndays. In that situation every read was a delta read, the new rules must implement a delta provider
-      <Rule ID="QND.Hyperv.2012R2.VMCPUUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMCPUUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -73,7 +73,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMAvgMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMAvgMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -109,7 +109,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMMaxMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMMaxMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -145,7 +145,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMIOPS.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMIOPS.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -181,7 +181,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMDiskLatency.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMDiskLatency.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -219,7 +219,7 @@
       </Rule>
   -->
 
-      <Rule ID="QND.Hyperv.2012R2.VMCPUUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMCPUUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -248,7 +248,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMAvgMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMAvgMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -277,7 +277,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMMaxMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMMaxMemoryUsage.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -306,7 +306,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMIOPS.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMIOPS.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -335,7 +335,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMDiskLatency.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMDiskLatency.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -371,7 +371,7 @@
         In this version we leave disabled the Delta provider rules and try to enable the rules that take the calculated value
       -->
 
-      <Rule ID="QND.Hyperv.2012R2.VMDiskDataReadPerSec.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMDiskDataReadPerSec.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -399,7 +399,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VMDiskDataWrittenPerSec.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VMDiskDataWrittenPerSec.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -431,7 +431,7 @@
 
       <!-- Performance collection for single VHD -->
 
-      <Rule ID="QND.Hyperv.2012R2.VHDIOPS.Rule" Target="QND.HyperV.2012R2.VirtualDrive" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VHDIOPS.Rule" Target="QND.HyperV.2012R2.VirtualDrive" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">
@@ -459,7 +459,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv.2012R2.VHDAvgLatency.Rule" Target="QND.HyperV.2012R2.VirtualDrive" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv.2012R2.VHDAvgLatency.Rule" Target="QND.HyperV.2012R2.VirtualDrive" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMMeasuresPerf.Opti.DS">

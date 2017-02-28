@@ -326,6 +326,3 @@ Catch [Exception] {
 	write-Verbose $("TRAPPED: " + $_.Exception.GetType().FullName); 
 	Write-Verbose $("TRAPPED: " + $_.Exception.Message); 
 }				  
-
-
-

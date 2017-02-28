@@ -160,7 +160,7 @@ try
 			Write-Host "Replica state dump: "
 			$replica | fl *
 			Write-Host "Replica measure dump: "
-			Measure-VMReplica -VM $vm | fl *
+			Mesaure-VMReplica -VM $vm | fl *
 		}
 		else {
 			Write-Host "VM with Guid $VMGuid not found on host!"

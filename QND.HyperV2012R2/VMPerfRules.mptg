@@ -8,7 +8,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.HyperV.2012R2.VirtualDrive</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -28,7 +28,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.Hyperv.2012R2.VM</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -48,7 +48,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.HyperV.2012R2.VirtualNetworkAdapter</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -68,7 +68,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.HyperV.2012R2.VirtualDrive</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -88,7 +88,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.HyperV.2012R2.VirtualDrive</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -101,14 +101,14 @@
       </PerformanceCollectionRuleConfig>
     </Instance>
     <Instance ID="Instance27eacd6cd23046688c0cd4371c85b371" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.PerformanceCollectionRule" Version="1.0.0.0">
-      <PerformanceCollectionRuleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <PerformanceCollectionRuleConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
         <Id>vCoreTotalRunTime.Rule</Id>
         <DisplayName>Hyper-V - vCore % runtime</DisplayName>
         <Description>Collects vCore Usage Percentage</Description>
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.Hyperv.2012R2.VM</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -130,7 +130,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.Hyperv.2012R2.VM</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>
@@ -150,7 +150,7 @@
         <Category>PerformanceCollection</Category>
         <ConfirmDelivery>false</ConfirmDelivery>
         <Target>QND.HyperV.2012R2.VirtualNetworkAdapter</Target>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
         <Remotable>true</Remotable>
         <Priority>Normal</Priority>
         <DiscardLevel>100</DiscardLevel>

@@ -1,9 +1,9 @@
-#TO SHOW VERBOSE MESSAGES SET $VerbosePreference="continue"
+﻿#TO SHOW VERBOSE MESSAGES SET $VerbosePreference="continue"
 #SET ErrorLevel to 5 so show discovery info
 
 #*************************************************************************
-# Script Name - Get-VHDSizePerVM.ps1
-# Author	  -  - Tao Yang (based on Get-VHDStats.ps1 from Progel spa)
+# Script Name - Get-VHDStats.ps1
+# Author	  -  - Progel spa
 # Version  - 1.0 24.09.2007
 # Purpose     - 
 #               
@@ -34,13 +34,14 @@
 
 
 # Get the named parameters
-param([int]$traceLevel=$(throw 'must have a value'))
+param([int]$traceLevel=$(throw 'must have a value'),
+	[string]$VMGuid)
 
 	[Threading.Thread]::CurrentThread.CurrentCulture = "en-US"        
 	[Threading.Thread]::CurrentThread.CurrentUICulture = "en-US"
 	
 #Constants used for event logging
-$SCRIPT_NAME			= "Get-VHDSizePerVM.ps1"
+$SCRIPT_NAME			= "Get-VHDStats.ps1"
 $SCRIPT_ARGS = 1
 $SCRIPT_STARTED			= 831
 $PROPERTYBAG_CREATED	= 832
@@ -154,37 +155,41 @@ try
 		Exit 1;
 	}
 
+	if ($VMGuid -ine 'ignore') {	#here we're in atask targeted at a specific VM
+		$vm = Get-VM | where {$_.VMId -ieq $VMGuid}
+		Write-Host "NYI!"
+		exit;
+	}
+
 	#$vms = @(gwmi Msvm_ComputerSystem -namespace "root\virtualization\v2" | where {$_.ReplicationMode -ne 0 -and $_.ReplicationMode -ne $null})
 	$vms=Get-VM
 	foreach($vm in $vms) {
 		try {
 			$HardDrives = $vm.HardDrives
 			$VHDs = Get-VHD -VMId $vm.VMId -ErrorAction SilentlyContinue
-			$TotalCurrentSize = 0
-			$TotalMaxSize = 0
-			$TotalMinSize = 0
 			foreach($hd in $HardDrives) {
 				$vhd = $VHDs| where {$_.Path -ieq $hd.Path}
-				
 				if($vhd) {
-					$TotalCurrentSize = $TotalCurrentSize + $vhd.FileSize
-					$TotalMaxSize = $TotalMaxSize + $vhd.Size
-					$TotalMinSize = $TotalMinSize + $vhd.MinimumSize
+					$currentSizeGB = [math]::Round((NullIsZero ($vhd.FileSize/1GB)),2)
+					$maxSizeGB = [math]::Round((NullIsZero ($vhd.Size/1GB)),2)
 					$minSizeGB = [math]::Round((NullIsZero ($vhd.MinimumSize/1GB)),2)
+					$fragPerc = NullIsZero ($vhd.FragmentationPercentage)
 				}
-
-				Log-Event $START_EVENT_ID $EVENT_TYPE_INFO ("$($vm.Name) - $($hs.Id) frag level $fragPerc") $TRACE_VERBOSE
-			}
-				$TotalCurrentSizeGB = [math]::Round((NullIsZero ($TotalCurrentSize/1GB)),2)
-				$TotalMaxSizeGB = [math]::Round((NullIsZero ($TotalMaxSize/1GB)),2)
-				$TotalMinSizeGB = [math]::Round((NullIsZero ($TotalMinSize/1GB)),2)
+				else {
+					$currentSizeGB = -1
+					$maxSizeGB = -1
+					$minSizeGB = -1
+					$fragPerc = -1
+				}
 				$bag = $g_api.CreatePropertyBag()
-				$bag.AddValue('VMId',$VM.VMId.ToString())
-				$bag.AddValue('VMName',$VM.VMName)
-				$bag.AddValue('CurrentSizeGB', $TotalCurrentSizeGB)
-				$bag.AddValue('MaxSizeGB',$TotalMaxSizeGB)
-				$bag.AddValue('MinSizeGB',$TotalMinSizeGB)
+				$bag.AddValue('VirtualDiskId',$hd.Id)
+				$bag.AddValue('SizeGB', $currentSizeGB)
+				$bag.AddValue('MaxSizeGB',$maxSizeGB)
+				$bag.AddValue('MinSizeGB',$minSizeGB)
+				$bag.AddValue('FragPerc',$fragPerc)
 				$bag
+				Log-Event $START_EVENT_ID $EVENT_TYPE_INFO ("$($vm.Name) - $($hd.Id) frag level $fragPerc") $TRACE_VERBOSE
+			}
 			Log-Event $START_EVENT_ID $EVENT_TYPE_INFO ("$($vm.Name) has been processed") $TRACE_VERBOSE
 		}
 		Catch [Exception] {

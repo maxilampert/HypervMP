@@ -345,6 +345,9 @@
         <DisplayString ElementID="QND.Hyperv.2012R2.DisableStdVMDiscovery.Override">
           <Name>Hyper-V 2012R2 - Disable Standard VM Discovery</Name>
         </DisplayString>        
+        <DisplayString ElementID="QND.Hyperv.2012R2.WhosMonitoringMe">
+        <Name>Hyper-V 2012R2 - Who is monitoring me fro debugging</Name>
+      </DisplayString>
       </DisplayStrings>
     </LanguagePack>
   </LanguagePacks>

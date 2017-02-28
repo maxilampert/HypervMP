@@ -55,7 +55,6 @@
         </ModuleImplementation>
         <OutputType>System!System.Discovery.Data</OutputType>
       </DataSourceModuleType>
-  
       <DataSourceModuleType ID="QND.Hyperv2012R2.GetVMReplicaStatus.DS" Accessibility="Public" Batching="false">
         <Configuration>
           <xsd:element name="IntervalSeconds" type="xsd:int" />
@@ -379,7 +378,6 @@
         </ModuleImplementation>
         <OutputType>Perf!System.Performance.Data</OutputType>
       </DataSourceModuleType>
-
       <DataSourceModuleType ID="QND.Hyperv2012R2.VM.Cluster.Resource.WMI.DS" Accessibility="Internal" Batching="false">
         <Configuration>
           <xsd:element minOccurs="1" name="IntervalSeconds" type="xsd:integer" />
@@ -474,7 +472,130 @@
         <OutputType>Perf!System.Performance.Data</OutputType>
       </DataSourceModuleType>
 
-     
+      <DataSourceModuleType ID="QND.Hyperv2012R2.GetVMSnapshotAge.Perf.DS" Accessibility="Public" Batching="false">
+        <Configuration>
+          <xsd:element name="IntervalSeconds" type="xsd:int" />
+          <xsd:element name="SyncTime" type="xsd:string" />
+          <xsd:element name="VMId" type="xsd:string" />
+          <xsd:element name="ObjectName" type="xsd:string" />
+          <xsd:element name="CounterName" type="xsd:string" />
+          <xsd:element name="InstanceProperty" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="PropertyBagValue" />
+          <xsd:element name="TimeoutSeconds" type="xsd:int" minOccurs="0" maxOccurs="1" default="60" />
+          <xsd:element name="TraceLevel" type="xsd:int" minOccurs="0" maxOccurs="1" />
+        </Configuration>
+        <OverrideableParameters>
+          <OverrideableParameter ID="IntervalSeconds" Selector="$Config/IntervalSeconds$" ParameterType="int" />
+          <OverrideableParameter ID="SyncTime" Selector="$Config/SyncTime$" ParameterType="string" />
+          <OverrideableParameter ID="TimeoutSeconds" Selector="$Config/TimeoutSeconds$" ParameterType="int" />
+          <OverrideableParameter ID="TraceLevel" ParameterType="int" Selector="$Config/TraceLevel$"/>
+        </OverrideableParameters>
+        <ModuleImplementation>
+          <Composite>
+            <MemberModules>
+              <DataSource ID="Scheduler" TypeID="System!System.SimpleScheduler">
+                <IntervalSeconds>$Config/IntervalSeconds$</IntervalSeconds>
+                <SyncTime>$Config/SyncTime$</SyncTime>
+              </DataSource>
+              <ProbeAction ID="Probe" TypeID="QND.Hyperv2012R2.VMSnapshotAge.PT">
+                <TimeoutSeconds>$Config/TimeoutSeconds$</TimeoutSeconds>
+                <TraceLevel>$Config/TraceLevel$</TraceLevel>
+              </ProbeAction>
+              <ConditionDetection ID="FilterVM" TypeID="System!System.ExpressionFilter">
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="String">Property[@Name='VMId']</XPathQuery>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value Type="String">$Config/VMId$</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+              </ConditionDetection>
+              <ConditionDetection ID="Mapper" TypeID="Perf!System.Performance.DataGenericMapper">
+                <ObjectName>$config/ObjectName$</ObjectName>
+                <CounterName>$config/CounterName$</CounterName>
+                <InstanceName>$Config/InstanceProperty$</InstanceName>
+                <Value>$Data/Property[@Name='$Config/PropertyBagValue$']$</Value>
+              </ConditionDetection>
+            </MemberModules>
+            <Composition>
+              <Node ID="Mapper">
+                <Node ID="FilterVM">
+                  <Node ID ="Probe">
+                    <Node ID="Scheduler" />
+                  </Node>
+                </Node>
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>Perf!System.Performance.Data</OutputType>
+      </DataSourceModuleType>
+      <DataSourceModuleType ID="QND.Hyperv2012R2.GetVHDFragment.Perf.DS" Accessibility="Public" Batching="false">
+        <Configuration>
+          <xsd:element name="IntervalSeconds" type="xsd:int" />
+          <xsd:element name="SyncTime" type="xsd:string" />
+          <xsd:element name="VirtualDiskId" type="xsd:string" />
+          <xsd:element name="ObjectName" type="xsd:string" />
+          <xsd:element name="CounterName" type="xsd:string" />
+          <xsd:element name="InstanceProperty" type="xsd:string" />
+          <xsd:element name="PropertyBagValue" type="xsd:string" />
+          <xsd:element name="TimeoutSeconds" type="xsd:int" minOccurs="0" maxOccurs="1" default="60" />
+          <xsd:element name="TraceLevel" type="xsd:int" minOccurs="0" maxOccurs="1" />
+        </Configuration>
+        <OverrideableParameters>
+          <OverrideableParameter ID="IntervalSeconds" Selector="$Config/IntervalSeconds$" ParameterType="int" />
+          <OverrideableParameter ID="SyncTime" Selector="$Config/SyncTime$" ParameterType="string" />
+          <OverrideableParameter ID="TimeoutSeconds" Selector="$Config/TimeoutSeconds$" ParameterType="int" />
+          <OverrideableParameter ID="TraceLevel" ParameterType="int" Selector="$Config/TraceLevel$"/>
+        </OverrideableParameters>
+        <ModuleImplementation>
+          <Composite>
+            <MemberModules>
+              <DataSource ID="Scheduler" TypeID="System!System.SimpleScheduler">
+                <IntervalSeconds>$Config/IntervalSeconds$</IntervalSeconds>
+                <SyncTime>$Config/SyncTime$</SyncTime>
+              </DataSource>
+              <ProbeAction ID="Probe" TypeID="QND.Hyperv2012R2.GetVHDStats.PT">
+                <TimeoutSeconds>$Config/TimeoutSeconds$</TimeoutSeconds>
+                <TraceLevel>$Config/TraceLevel$</TraceLevel>
+              </ProbeAction>
+              <ConditionDetection ID="FilterVM" TypeID="System!System.ExpressionFilter">
+                <Expression>
+                  <SimpleExpression>
+                    <ValueExpression>
+                      <XPathQuery Type="String">Property[@Name='VirtualDiskId']</XPathQuery>
+                    </ValueExpression>
+                    <Operator>Equal</Operator>
+                    <ValueExpression>
+                      <Value Type="String">$Config/VirtualDiskId$</Value>
+                    </ValueExpression>
+                  </SimpleExpression>
+                </Expression>
+              </ConditionDetection>
+              <ConditionDetection ID="Mapper" TypeID="Perf!System.Performance.DataGenericMapper">
+                <ObjectName>$config/ObjectName$</ObjectName>
+                <CounterName>$config/CounterName$</CounterName>
+                <InstanceName>$config/InstanceProperty$</InstanceName>
+                <Value>$Data/Property[@Name='$Config/PropertyBagValue$']$</Value>
+              </ConditionDetection>
+            </MemberModules>
+            <Composition>
+              <Node ID="Mapper">
+                <Node ID="FilterVM">
+                  <Node ID ="Probe">
+                    <Node ID="Scheduler" />
+                  </Node>
+                </Node>
+              </Node>
+            </Composition>
+          </Composite>
+        </ModuleImplementation>
+        <OutputType>Perf!System.Performance.Data</OutputType>
+      </DataSourceModuleType>     
            
         <ProbeActionModuleType ID="QND.Hyperv2012R2.VMReplicaStatus.PT" Accessibility="Public" Batching="false">
         <Configuration>

@@ -11,15 +11,15 @@
             <Name>State</Name>
             <Id>QND.Hyperv.2012R2.VM</Id>
           </ColumnInfo>
-          <ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
-            <Name>Maintenance Mode</Name>
+          <ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>In Maintenance Mode</Name>
             <Id>InMaintenanceMode</Id>
           </ColumnInfo>
           <ColumnInfo Index="2" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
             <Name>Name</Name>
             <Id>Name</Id>
           </ColumnInfo>
-          <ColumnInfo Index="3" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+          <ColumnInfo Index="3" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
             <Name>Path</Name>
             <Id>Path</Id>
           </ColumnInfo>
@@ -27,11 +27,11 @@
             <Name>Display Name</Name>
             <Id>System.Entity/DisplayName</Id>
           </ColumnInfo>
-          <ColumnInfo Index="5" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+          <ColumnInfo Index="5" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
             <Name>Model</Name>
             <Id>System.ComputerHardware/Model</Id>
           </ColumnInfo>
-          <ColumnInfo Index="6" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+          <ColumnInfo Index="6" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
             <Name>Manufacturer</Name>
             <Id>System.ComputerHardware/Manufacturer</Id>
           </ColumnInfo>
@@ -55,7 +55,7 @@
             <Name>VMComputerName</Name>
             <Id>QND.Hyperv.2012R2.VM/VMComputerName</Id>
           </ColumnInfo>
-          <ColumnInfo Index="12" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+          <ColumnInfo Index="12" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
             <Name>Integration Services Version</Name>
             <Id>QND.Hyperv.2012R2.VM/ISVersion</Id>
           </ColumnInfo>
@@ -63,11 +63,11 @@
             <Name>Resource Metering Enabled</Name>
             <Id>QND.Hyperv.2012R2.VM/RMEnabled</Id>
           </ColumnInfo>
-          <ColumnInfo Index="14" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+          <ColumnInfo Index="14" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
             <Name>VM Generation</Name>
             <Id>QND.Hyperv.2012R2.VM/VMGeneration</Id>
           </ColumnInfo>
-          <ColumnInfo Index="15" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="false" Visible="false" SortOrder="Ascending">
+          <ColumnInfo Index="15" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="false" Visible="true" SortOrder="Ascending">
             <Name>Highly Available</Name>
             <Id>QND.Hyperv.2012R2.VM/HA</Id>
           </ColumnInfo>
@@ -87,7 +87,7 @@
             <Name>Processor count</Name>
             <Id>QND.Hyperv.2012R2.VM/ProcessorCount</Id>
           </ColumnInfo>
-          <ColumnInfo Index="20" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
+          <ColumnInfo Index="20" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
             <Name>OS Platform Id</Name>
             <Id>QND.Hyperv.2012R2.VM/OSPlatformId</Id>
           </ColumnInfo>
@@ -95,7 +95,7 @@
             <Name>OS Family</Name>
             <Id>QND.Hyperv.2012R2.VM/OSFamily</Id>
           </ColumnInfo>
-          <ColumnInfo Index="22" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+          <ColumnInfo Index="22" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
             <Name>OS Name</Name>
             <Id>QND.Hyperv.2012R2.VM/OSName</Id>
           </ColumnInfo>
@@ -116,12 +116,12 @@
           <InMaintenanceMode>false</InMaintenanceMode>
         </Criteria>
         <Presentation>
-          <ColumnInfo Index="0" SortIndex="-1" Width="100" Grouped="false" Sorted="true" IsSortable="true" Visible="true" SortOrder="Descending">
+          <ColumnInfo Index="0" SortIndex="0" Width="100" Grouped="false" Sorted="true" IsSortable="true" Visible="true" SortOrder="Descending">
             <Name>State</Name>
             <Id>QND.HyperV.2012R2.VirtualDrive</Id>
           </ColumnInfo>
-          <ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
-            <Name>Maintenance Mode</Name>
+          <ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>In Maintenance Mode</Name>
             <Id>InMaintenanceMode</Id>
           </ColumnInfo>
           <ColumnInfo Index="2" SortIndex="0" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
@@ -169,12 +169,12 @@
           <InMaintenanceMode>false</InMaintenanceMode>
         </Criteria>
         <Presentation>
-          <ColumnInfo Index="0" SortIndex="-1" Width="100" Grouped="false" Sorted="true" IsSortable="true" Visible="true" SortOrder="Descending">
+          <ColumnInfo Index="0" SortIndex="0" Width="100" Grouped="false" Sorted="true" IsSortable="true" Visible="true" SortOrder="Descending">
             <Name>State</Name>
             <Id>QND.HyperV.2012R2.VirtualNetworkAdapter</Id>
           </ColumnInfo>
-          <ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
-            <Name>Maintenance Mode</Name>
+          <ColumnInfo Index="1" SortIndex="-1" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="false" SortOrder="Ascending">
+            <Name>In Maintenance Mode</Name>
             <Id>InMaintenanceMode</Id>
           </ColumnInfo>
           <ColumnInfo Index="2" SortIndex="0" Width="100" Grouped="false" Sorted="false" IsSortable="true" Visible="true" SortOrder="Ascending">
@@ -224,7 +224,7 @@
       <FolderItem ElementID="QND.Hyperv.2012R2.VirtualMachine.Performance.View" ID="QND.Hyperv.2012R2.VMPerf.Item" Folder="HVLib!Microsoft.Windows.HyperV.RootFolder" />
       <FolderItem ElementID="QND.Hyperv.2012R2.VirtualDrive.Performance.View" ID="QND.HyperV.2012R2.VirtualDrivePerf.Item" Folder="HVLib!Microsoft.Windows.HyperV.RootFolder" />
       <FolderItem ElementID="QND.Hyperv.2012R2.VirtualNetworkAdapter.Performance.View" ID="QND.HyperV.2012R2.VirtualNetworkAdapterPerf.Item" Folder="HVLib!Microsoft.Windows.HyperV.RootFolder" />
-    </FolderItems>
+    </FolderItems> 
   </Presentation>
   <LanguagePacks>
     <LanguagePack ID="ENU" IsDefault="true">
