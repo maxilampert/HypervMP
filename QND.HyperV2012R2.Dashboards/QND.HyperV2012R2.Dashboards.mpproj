@@ -15,8 +15,8 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug\</OutputPath>
     <GenerateSealed>True</GenerateSealed>
-    <Company>Basefarm</Company>
-    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <Company>Community</Company>
+    <Copyright>Free</Copyright>
     <DelaySigning>False</DelaySigning>
     <AssemblyOriginatorKeyFile>Q:\Personlig\Sertifikat\CodeSigning.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
