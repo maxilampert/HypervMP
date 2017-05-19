@@ -25,8 +25,8 @@
           <TimeoutSeconds>600</TimeoutSeconds>
           <TraceLevel>2</TraceLevel>
           <VirtualDiskId>$Target/Property[Type='QND.HyperV.VMHardwareComponent']/DeviceId$</VirtualDiskId>
-          <FragmentationWarningThreshold>30</FragmentationWarningThreshold>
-          <FragmentationErrorThreshold>50</FragmentationErrorThreshold>
+          <FragmentationWarningThreshold>50</FragmentationWarningThreshold>
+          <FragmentationErrorThreshold>90</FragmentationErrorThreshold>
         </Configuration>
       </UnitMonitor>
     </Monitors>

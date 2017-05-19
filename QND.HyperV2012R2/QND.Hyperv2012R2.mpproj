@@ -15,10 +15,10 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug\</OutputPath>
     <GenerateSealed>True</GenerateSealed>
-    <Company>Quae Nocent Docent</Company>
-    <Copyright>Copyright (c) QND. All rights reserved.</Copyright>
+    <Company>Community</Company>
+    <Copyright>Free</Copyright>
     <DelaySigning>False</DelaySigning>
-    <AssemblyOriginatorKeyFile>C:\Users\grandinid\SkyDrive\Dev\OpsMgr\Firma\QND1.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Q:\Personlig\Sertifikat\CodeSigning.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
@@ -44,6 +44,24 @@
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.SystemCenter.Library">
       <Alias>SC</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Component.Library">
+      <HintPath>.\MPLib\Microsoft.SystemCenter.Visualization.Component.Library.mpb</HintPath>
+      <Alias>MSVCL</Alias>
+      <MinVersion>7.1.10226.1239</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Configuration.Library">
+      <HintPath>.\MPLib\Microsoft.SystemCenter.Visualization.Configuration.Library.mp</HintPath>
+      <Alias>Configuration</Alias>
+      <MinVersion>7.1.10226.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.VMMHostVM.Visualization.Components">
+      <HintPath>.\MPLib\Microsoft.SystemCenter.VMMHostVM.Visualization.Components.mpb</HintPath>
+      <Alias>VMMDash</Alias>
+      <MinVersion>1.1.41.91</MinVersion>
       <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.Windows.Cluster.Library">
@@ -146,6 +164,9 @@
     <Compile Include="RecoveryTasks.mpx">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VHDStatsPerfRules.mpx">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="VMGenericMonitors.mpx">
       <SubType>Code</SubType>
     </Compile>
@@ -193,6 +214,9 @@
       <SubType>Code</SubType>
       <DependentUpon>VMTasks.mptg</DependentUpon>
     </Compile>
+    <Compile Include="WidgetTemplate.mpx">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MPLib" />
@@ -230,7 +254,16 @@
     <Content Include="MPLib\Microsoft.SystemCenter.Library.mp">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="MPLib\Microsoft.SystemCenter.Visualization.Component.Library.mpb">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MPLib\Microsoft.SystemCenter.Visualization.Configuration.Library.mp">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="MPLib\Microsoft.SystemCenter.Visualization.Library.mp">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MPLib\Microsoft.SystemCenter.VMMHostVM.Visualization.Components.mpb">
       <SubType>Content</SubType>
     </Content>
     <Content Include="MPLib\Microsoft.Windows.Cluster.Library.mp">

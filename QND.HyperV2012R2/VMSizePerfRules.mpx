@@ -1,7 +1,7 @@
 ﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Monitoring>
     <Rules>
-      <Rule ID="QND.Hyperv2012R2.VM.TotalSize.Perf.Collection.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv2012R2.VM.TotalSize.Perf.Collection.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMSize.Perf.DS">
@@ -19,7 +19,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv2012R2.VM.MaxSize.Perf.Collection.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv2012R2.VM.MaxSize.Perf.Collection.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMSize.Perf.DS">
@@ -37,7 +37,7 @@
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
       </Rule>
-      <Rule ID="QND.Hyperv2012R2.VM.MinSize.Perf.Collection.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="true" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
+      <Rule ID="QND.Hyperv2012R2.VM.MinSize.Perf.Collection.Rule" Target="QND.Hyperv.2012R2.VM" Enabled="false" ConfirmDelivery="false" Remotable="true" Priority="Normal" DiscardLevel="100">
         <Category>PerformanceCollection</Category>
         <DataSources>
           <DataSource ID="DS" TypeID="QND.Hyperv2012R2.GetVMSize.Perf.DS">
@@ -54,7 +54,7 @@
           <WriteAction ID="CollectToDB" TypeID="SC!Microsoft.SystemCenter.CollectPerformanceData" />
           <WriteAction ID="CollectToDW" TypeID="MSDL!Microsoft.SystemCenter.DataWarehouse.PublishPerformanceData" />
         </WriteActions>
-      </Rule>
+      </Rule>     
     </Rules>
   </Monitoring>
   <LanguagePacks>

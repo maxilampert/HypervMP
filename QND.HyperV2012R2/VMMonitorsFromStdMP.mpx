@@ -166,7 +166,6 @@
           </RegularDetections>
         </MonitorImplementation>
       </UnitMonitorType>
-
     </MonitorTypes>
   </TypeDefinitions>
   <Monitoring>
@@ -234,12 +233,11 @@
           <PropertyName>HeterogeneousGPU</PropertyName>
         </Configuration>
       </UnitMonitor>
-      <DependencyMonitor ID="QND.Hyperv.2012R2.VDiskToVM.DepMonitor" Accessibility="Public" Enabled="true" MemberMonitor="Health!System.Health.AvailabilityState"
+      <DependencyMonitor ID="QND.Hyperv.2012R2.VDiskToVM.DepMonitor" Accessibility="Public" Enabled="false" MemberMonitor="Health!System.Health.AvailabilityState"
                          ParentMonitorID="Health!System.Health.AvailabilityState" RelationshipType="QND.Hyperv.2012R2.VMHostsVMHardwareComponent" Remotable="true" Priority="Normal" Target="QND.Hyperv.2012R2.VM">
         <Category>AvailabilityHealth</Category>
         <Algorithm>WorstOf</Algorithm>
-      </DependencyMonitor>
-                         
+      </DependencyMonitor>                    
     </Monitors>
   </Monitoring>
   <Presentation>
